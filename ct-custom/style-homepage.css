@@ -1,0 +1,331 @@
+/* Base styles already from before, plus responsive rules */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Top Bar */
+.top-bar {
+    background: #ff6600;
+    color: #fff;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Make CALL US NOW! text black */
+.top-bar .call-text {
+    color: #000;
+}
+
+.top-bar .phone {
+   color: #fff;
+   font-weight: bold;
+}
+
+/* Make LOGIN text black */
+.top-bar .auth-links a {
+    color: #000; /* Changed from white */
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.top-bar .auth-links .signup {
+    font-weight: bold;
+    color: #fff; /* Keep signup button white text on orange */
+}
+
+
+.main-header {
+    background: #f7f7f7;
+    padding: 15px 0;
+}
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo img {
+    max-height: 60px;
+}
+
+.main-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu ul li {
+    position: relative;
+}
+
+.main-menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 300;
+    padding: 8px 8px;
+    display: block;
+	text-align: center;
+}
+
+.main-menu ul li a:hover {
+    border-bottom: 4px solid #ff6600;
+	font-weight: 600;
+}
+/* Hide submenus by default */
+.main-menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #f7f7f7;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 999;
+    border: 1px solid #ddd;
+    flex-direction: column;
+}
+
+/* Show submenu on hover (desktop) */
+.main-menu ul li:hover > ul {
+    display: block;
+	margin: 5px 0px 0px -25px;
+}
+
+/* Submenu items vertical */
+.main-menu ul ul li {
+    width: 100%;
+}
+
+.main-menu ul ul li a {
+    padding: 5px;
+    color: #000;
+    font-weight: normal;
+}
+
+.main-menu ul ul li a:hover {
+    background: #ff6600;
+    color: #fff;
+}
+
+.main-menu ul ul li:hover > ul {
+    display: block;
+	margin: 2px 0px 0px 150px;
+}
+/* Submenu Sub items vertical */
+.main-menu ul ul ul li {
+    width: 100%;
+}
+
+.main-menu ul ul ul li a {
+    padding: 5px;
+    color: #000;
+    font-weight: normal;
+}
+
+.main-menu ul ul ul li a:hover {
+    background: #ff6600;
+    color: #fff;
+}
+
+
+.breadcrumbs {
+    font-size: 14px;
+    padding: 10px 0;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #666;
+}
+.breadcrumbs a {
+    color: #333;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumb-current {
+    font-weight: bold;
+    color: #000; /* optional */
+}
+.page-title {
+    margin-top: 0;
+}
+.breadcrumbs a {
+    color: #333;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.page-title {
+    color: #ff6600;
+    font-size: 28px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 40px;
+    align-items: stretch; /* Make columns equal height */
+}
+
+.contact-form,
+.contact-info {
+    flex: 1; /* Equal width */
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section h2 {
+    color: #ff6600;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #333;
+    padding-bottom: 5px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+
+.contact-form input[type="submit"] {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+	text-transform: uppercase;
+}
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Responsive*/
+/* Hide menu toggle on desktop */
+.menu-toggle {
+    display: none;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .main-menu {
+        display: none;
+        width: 100%;
+    }
+
+    .main-menu.show {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Align logo & menu vertically */
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        flex: 0 0 auto;
+        margin-right: auto;
+        text-align: left;
+        display: flex; /* Helps vertically center logo image */
+        align-items: center;
+    }
+
+    .logo img {
+        max-height: 50px;
+        height: auto;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+		margin-top: -40px;
+        margin-left: auto;
+        order: 2;
+        padding: 8px 12px; /* Ensures equal clickable height */
+        line-height: 1;
+        align-self: center; /* Ensures perfect vertical alignment */
+    }
+
+    .main-menu {
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+
+    .main-menu.show {
+        display: block;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .header-inner {
+        flex-direction: column;
+    }
+    .top-bar .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 22px;
+    }
+    .contact-section h2 {
+        font-size: 18px;
+    }
+}
