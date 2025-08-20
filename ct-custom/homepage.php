@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Homepage
+ * Custom template
  */
 get_header();
 ?>
